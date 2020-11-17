@@ -1,0 +1,37 @@
+{
+  "name": "mongo",
+  "version": "1.0.0",
+  "description": "test mongo db",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "mongo": "nodemon src/server.js",
+    "lint": "eslint .",
+    "lint:fix":"eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Chris4589/MongoDB.git"
+  },
+  "author": "Christopher Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris4589/MongoDB/issues"
+  },
+  "homepage": "https://github.com/Chris4589/MongoDB#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6"
+  }
+}

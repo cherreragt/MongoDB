@@ -1,0 +1,148 @@
+{
+    "env": {
+      "commonjs": true,
+      "shared-node-browser": true,
+      "es6": true,
+      "node": true,
+      "mocha": true,
+      "browser": false,
+      "mongo": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2019
+    },
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "quotes": [
+        "off",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-inner-declarations": [
+        "off",
+        "both"
+      ],
+      "no-await-in-loop": "error",
+      "block-scoped-var": "error",
+      "class-methods-use-this": "error",
+      "complexity": [
+        "error",
+        {
+          "max": 5
+        }
+      ],
+      "consistent-return": [
+        "error",
+        {
+          "treatUndefinedAsUnspecified": true
+        }
+      ],
+      "no-empty-function": "error",
+      "no-invalid-this": "error",
+      "no-lone-blocks": "error",
+      "no-loop-func": "error",
+      "no-return-await": "error",
+      "no-self-compare": "error",
+      "no-throw-literal": "error",
+      "no-unused-expressions": "error",
+      "require-await": "warn",
+      "vars-on-top": "error",
+      "strict": [
+        "error",
+        "global"
+      ],
+      "global-require": "error",
+      "no-process-env": "warn",
+      "camelcase": [
+        "off",
+        {
+          "properties": "always"
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "never",
+          "objects": "never",
+          "imports": "never",
+          "exports": "never",
+          "functions": "never"
+        }
+      ],
+      "comma-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "func-style": [
+        "warn",
+        "declaration",
+        {
+          "allowArrowFunctions": false
+        }
+      ],
+      "max-depth": [
+        "error",
+        4
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 140,
+          "comments": 140
+        }
+      ],
+      "max-lines": [
+        "error",
+        {
+          "max": 320,
+          "skipComments": true,
+          "skipBlankLines": true
+        }
+      ],
+      "max-lines-per-function": [
+        "error",
+        {
+          "max": 35
+        }
+      ],
+      "max-nested-callbacks": [
+        "error",
+        3
+      ],
+      "max-statements:": [
+        "off",
+        {
+          "max": 15,
+          "ignoreTopLevelFunctions": false
+        }
+      ],
+      "max-statements-per-line": [
+        "error",
+        {
+          "max": 1
+        }
+      ],
+      "no-multi-assign": "error",
+      "no-underscore-dangle": "error"
+    }
+  }
+  
+  
