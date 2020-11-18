@@ -4,7 +4,7 @@ const Joi = require('joi');
 
 module.exports = {
     body:() => Joi.object({
-        user: Joi.string().required(),
+        username: Joi.string().required(),
         password: Joi.string().required()
     }),
     query:() => Joi.object({

@@ -4,9 +4,6 @@
       "shared-node-browser": true,
       "es6": true,
       "node": true,
-      "mocha": true,
-      "browser": false,
-      "mongo": true
     },
     "extends": "eslint:recommended",
     "globals": {
@@ -14,6 +11,7 @@
       "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
+      "parser": "babel-eslint",
       "ecmaVersion": 2019
     },
     "rules": {
