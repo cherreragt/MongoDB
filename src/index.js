@@ -1,23 +1,26 @@
 'use strict';
 
 const express = require('express');
-const bodyParser = require("body-parser");
 const app = express();
+
+require('dotenv').config();
 
 const db = require('./configs/db');
 const route = require('./routes/route');
 
 // eslint-disable-next-line no-process-env
 const port = process.env.PORT || 3030;
-//const host = process.env.HOST || '0.0.0.0'; 
+// eslint-disable-next-line no-process-env
+const host = process.env.HOST || '0.0.0.0'; 
 
-db('mongodb://localhost:27017/test');
+// eslint-disable-next-line no-process-env
+db(process.env.DB);
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/', route);
 
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log(`Servidor en localhost:${port}`);
 });
 

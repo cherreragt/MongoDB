@@ -1,28 +1,74 @@
 'use strict';
 
-const { createUser, updateUser, findOneUser, findAllUsers, deleteOneUser } = require('./functions/users');
+const user = require('../models/user');
 
 var result;
 
+function responses(res, status, result, error) {
+    return res.status(status).json({
+        error:error,
+        result:result
+    });
+}
+
 module.exports = {
     cback_postUser: async (req, res) =>{
-        result = await createUser(req.body);
-        res.send(result).status(200);
+        try {
+            const { username, password } = req.body;
+
+            result = await user.create({
+                username,
+                password
+            });
+            return responses(res, 200, result, false);
+        } catch (error) {
+            return responses(res, 500, 'error en el servidor', true);
+        }
     },
     cback_putUser: async (req, res) =>{
-        result = await updateUser(req.body, req.query.id);
-        res.send(result).status(200);
+        try {
+            const { username, password } = req.body;
+            const { id } = req.query;
+
+            result = await user.findOneAndUpdate({
+                id 
+            },
+            {
+                username,
+                password
+            });
+            return responses(res, 200, result, false);
+        } catch (error) {
+            return responses(res, 500, 'error en el servidor', true);
+        }
     },
     cback_getUser: async (req, res) =>{
-        result = await findOneUser(req.query.id);
-        res.send(result).status(200);
+        try {
+            const { id } = req.query;
+            result = await user.findById({
+                id 
+            });
+
+            return responses(res, 200, result, false);
+        } catch (error) {
+            return responses(res, 500, 'error en el servidor', true);
+        }
     },
     cback_deleteUser: async (req, res) =>{
-        result = await deleteOneUser(req.query.id);
-        res.send(result).status(200);
+        try {
+            const { id } = req.query;
+            result = await user.findOneAndDelete({id});
+            return responses(res, 200, result, false);
+        } catch (error) {
+            return responses(res, 500, 'error en el servidor', true);
+        }
     },
     cback_getAllUsers: async (req, res) =>{
-        result = await findAllUsers();
-        res.send(result).status(200);
+        try {
+            result = await user.find();
+            return responses(res, 200, result, false);
+        } catch (error) {
+            return responses(res, 500, 'error en el servidor', true);
+        }
     }
 };
